@@ -45,7 +45,7 @@ def DownloadTiles(geo, coordinates, startdate, enddate):
     headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
   
     response = requests.post('https://api.satellietdataportaal.nl/v1/search', data=json.dumps(data), headers=headers, 
-                             auth=('satelliet.datalab.rws@gmail.com', 'RWS4121312'))
+                             auth=('xxx', 'xxx'))
   
     """
     Make a list with download links
@@ -60,7 +60,7 @@ def DownloadTiles(geo, coordinates, startdate, enddate):
         results_json.write(results) 
         results_json.write("\n") 
         print("download: ", results)
-        r = requests.get(results, auth=HTTPBasicAuth('satelliet.datalab.rws@gmail.com', 'RWS4121312'), stream=True)
+        r = requests.get(results, auth=HTTPBasicAuth('xxx', 'xxx'), stream=True)
         with open('downloaded_tiles/downloaded_'+ str(i) + '.zip', 'wb') as f:
             f.write(r.content)
     results_json.close()
