@@ -37,7 +37,7 @@ def FromDownloadtoPredict(geo, coordinates, startdate, enddate):
         print(results)
         
         print("downloading: ", results)
-        r = requests.get(results, auth=HTTPBasicAuth('satelliet.datalab.rws@gmail.com', 'RWS4121312'), stream=True)
+        r = requests.get(results, auth=HTTPBasicAuth('xxxx', 'xxx'), stream=True)
         zip_filename = os.path.join(in_path, 'downloaded_'+ str(i) + '.zip')
         with open(zip_filename, 'wb') as f:
             f.write(r.content)
